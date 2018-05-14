@@ -1,8 +1,8 @@
 .intro {
   display: block;
   position: relative;
-  min-height: 462px; 
-  	margin-top: -67px;
+  min-height: 462px;
+  margin-top: -67px;
   font-family: "Open Sans";
   background-color: @color-darken-blue;
   background-image: url(../img/intro-iphone.png), url(../img/back.jpg);
@@ -87,8 +87,9 @@
 
 @media @tablet-width {
   .intro {
-    min-height: 730px;
-//    margin-top: -110px;
+    //    min-height: 730px;
+    min-height: 100vh; 
+        margin-top: -110px;
     background-image: url(../img/intro-iphone-tab.png), url(../img/back.jpg);
     background-position: center bottom 0px, center top 0px;
     @media @retina {
@@ -143,7 +144,7 @@
 
 @media @desctop-width {
   .intro {
-    min-height: 853px;
+    //    min-height: 853px;
     margin-top: 0;
     background-image: url(../img/intro-iphone-desc.png), url(../img/back-desctop.jpg);
     background-position: right 0% bottom 0px, center top 0px;
