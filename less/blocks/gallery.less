@@ -1,0 +1,130 @@
+.gallery {
+  position: relative;
+  background-color: @color-white;
+  overflow: hidden;
+}
+
+.gallery__photo {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery__item {
+  .flex(column);
+  margin-bottom: 20px;
+}
+
+.gallery__review {
+  margin: 0 20px;
+  padding: 20px;
+  background-color: @color-photo;
+}
+
+.gallery__desc {
+  background-color: @color-photo;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.gallery__author {
+  display: inline-block;
+  font-family: "Open Sans Bold";
+}
+
+.gallery__time {
+  text-transform: uppercase;
+  font-family: "Open Sans Light";
+  font-size: 12px;
+}
+
+.gallery__text {
+  font-family: "Open Sans";
+  color: @color-dark-blue;
+  padding-bottom: 20px;
+
+}
+
+.gallery__like {
+  position: relative;
+  padding-left: 30px;
+  font-size: 12px;
+  color: @color-pink;
+  text-transform: uppercase;
+  &::before {
+    .pseudo("", 13px, 12px);
+    left: 0;
+    top: 50%;
+    margin-top: -7px;
+    background: url(../img/icons/like.svg) center no-repeat;
+  }
+}
+
+@media @tablet-width {
+  .gallery__wrapper {
+    .flex(row, space-between);
+    flex-wrap: wrap;
+    padding: 0 6%;
+  }
+  .gallery__photo--main {
+    max-width: none;
+    margin: 0;
+    margin-left: 50%;
+    height: 509px;
+    left: -600px;
+  }
+  .gallery__review {
+    margin: 0;
+  }
+  .gallery__review {
+    .flex(column);
+    flex-grow: 1;
+    margin: 0;
+    padding: 27px;
+  }
+
+  .gallery__desc {
+    box-sizing: content-box;
+    flex-grow: 1;
+    width: 246px;
+    margin: 0;
+  }
+
+  .gallery__review--main {
+    position: relative;
+    margin: 0 6%;
+  }
+  .gallery__desc--main {
+    width: 100%;
+  }
+  .gallery__photo--main {
+    max-width: none;
+    margin: 0;
+    margin-left: 50%;
+    height: 509px;
+    left: -600px;
+  }
+
+  @supports (display:grid) {
+    .gallery__wrapper {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 300px);
+      grid-gap: 20px;
+      justify-content: space-between;
+    }
+    .gallery__item {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+@media @desctop-width {
+  .gallery__wrapper {
+    //    padding: 0 11%;
+  }
+}
