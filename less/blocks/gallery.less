@@ -10,6 +10,23 @@
   margin: 0 auto;
 }
 
+.gallery__best {
+  position: relative;
+  &::before {
+    .pseudo("Панорама дня", auto, auto);
+    padding: 8px 20px;
+    z-index: 2;
+    left: 50%;
+    top: 0;
+    font-family: "Open Sans Bold";
+    font-size: 12px;
+    line-height: 24px;
+    color: @color-white;
+    background-color: @color-pink;
+    text-transform: uppercase;
+  }
+}
+
 .gallery__item {
   .flex(column);
   margin-bottom: 20px;
@@ -66,15 +83,15 @@
     flex-wrap: wrap;
     padding: 0 6%;
   }
-  .gallery__photo--main {
-    max-width: none;
-    margin: 0;
-    margin-left: 50%;
-    height: 509px;
-    left: -600px;
-  }
   .gallery__review {
     margin: 0;
+  }
+  .gallery__best {
+    &::before {
+      left: auto;
+      right: 6%;
+      top: 57px;
+    }
   }
   .gallery__review {
     .flex(column);
@@ -93,6 +110,7 @@
   .gallery__review--main {
     position: relative;
     margin: 0 6%;
+    margin-bottom: 50px;
   }
   .gallery__desc--main {
     width: 100%;
@@ -104,17 +122,29 @@
     height: 509px;
     left: -600px;
   }
+  .gallery__like--main {
+    position: absolute;
+    padding-left: 0;
+    padding-right: 30px;
+    right: 27px;
+    &::before {
+      left: auto;
+      right: 0;
+      top: 50%;
+      margin-top: -7px;
+    }
+  }
+
 
   @supports (display:grid) {
     .gallery__wrapper {
       box-sizing: border-box;
-      width: 100%;
-      max-width: 1200px;
+      width: 100%; //      max-width: 1200px;
       margin: 0 auto;
-      padding: 0;
+      padding: 0 6%;
       display: grid;
       grid-template-columns: repeat(auto-fill, 300px);
-      grid-gap: 20px;
+      grid-gap: 15px;
       justify-content: space-between;
     }
     .gallery__item {
@@ -125,6 +155,21 @@
 
 @media @desctop-width {
   .gallery__wrapper {
-    //    padding: 0 11%;
+    padding: 0 11%;
+  }
+  .gallery__photo--main {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    left: auto;
+  }
+  .gallery__review--main {
+    position: relative;
+    margin: 0 11%;
+  }
+  .gallery__best {
+    &::before {
+      right: 11%;
+    }
   }
 }

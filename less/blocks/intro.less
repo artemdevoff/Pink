@@ -16,9 +16,6 @@
   }
 }
 
-
-
-
 .intro__wrapper {
   height: auto;
 }
@@ -116,7 +113,7 @@
 .intro__about {
   margin-top: auto;
   min-height: 96px;
-  padding: 45px 20px;
+  padding: 45px 38px;
   font-family: "Open Sans";
   font-size: 14px;
   line-height: 30px;
@@ -182,7 +179,9 @@
   .intro__icon--android {
     opacity: 0.4;
     height: 52px;
-  } //INTRO INNER//
+  } 
+  
+  //INTRO INNER//
   .intro--inner {
     min-height: 670px;
     background-image: url(../img/back.jpg);
@@ -203,9 +202,11 @@
   }
 
   .intro__about {
+    box-sizing: border-box;
+    width: 100%;
     margin-top: auto;
     min-height: 96px;
-    padding: 95px 20px;
+    padding: 95px 6%;
     padding-bottom: 75px;
     font-size: 18px;
   }
@@ -259,5 +260,12 @@
   }
   .intro__icon--android {
     opacity: 1;
+  }
+  //INTRO INNER//
+  .intro__about{
+    box-sizing: content-box;
+    width: 50%;
+    min-height: none;
+    padding: 90px 25%;
   }
 }

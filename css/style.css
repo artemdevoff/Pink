@@ -337,7 +337,7 @@ template {
     z-index: 4;
   }
   .main-nav__wrapper {
-    width: 78%;
+    width: auto;
     margin: 0 auto;
   }
   .main-nav__toogle {
@@ -407,6 +407,17 @@ template {
   .main-nav__links:active {
     opacity: 0.3;
     transition: opacity 0.3s ease-in;
+  }
+}
+@media (min-width:1200px) and (min-width:700px) {
+  .main-nav__wrapper {
+    width: 88%;
+    margin: 0 auto;
+  }
+}
+@media (min-width:1200px) and (min-width:1200px) {
+  .main-nav__wrapper {
+    width: 78%;
   }
 }
 .intro {
@@ -524,7 +535,7 @@ template {
 .intro__about {
   margin-top: auto;
   min-height: 96px;
-  padding: 45px 20px;
+  padding: 45px 38px;
   font-family: "Open Sans";
   font-size: 14px;
   line-height: 30px;
@@ -595,9 +606,11 @@ template {
     line-height: 60px;
   }
   .intro__about {
+    box-sizing: border-box;
+    width: 100%;
     margin-top: auto;
     min-height: 96px;
-    padding: 95px 20px;
+    padding: 95px 6%;
     padding-bottom: 75px;
     font-size: 18px;
   }
@@ -662,6 +675,12 @@ template {
   }
   .intro__icon--android {
     opacity: 1;
+  }
+  .intro__about {
+    box-sizing: content-box;
+    width: 50%;
+    min-height: none;
+    padding: 90px 25%;
   }
 }
 @media (min-width:1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:1200px) and (min-resolution: 144dpi), ~(-webkit-min-device-pixel-ratio: 1.5), ~(min-resolution: 1.5dppx) {
@@ -1128,12 +1147,24 @@ template {
 }
 .tariffs__wrapper {
   position: relative;
+  width: auto;
   width: 100%;
   margin: 0 auto;
   padding-top: 120px;
   padding-bottom: 100px;
   text-align: center;
   overflow: hidden;
+}
+@media (min-width:700px) {
+  .tariffs__wrapper {
+    width: 88%;
+    margin: 0 auto;
+  }
+}
+@media (min-width:1200px) {
+  .tariffs__wrapper {
+    width: 78%;
+  }
 }
 .tarrifs__feature {
   display: none;
@@ -1301,11 +1332,14 @@ template {
 }
 @media (min-width:1200px) {
   .tariffs {
-    background-image: url(../img/price-back-desc.jpg);
-    background-position: center bottom;
+    background-image: url(../img/advant-back-desc.jpg);
+    background-position: top 40px center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .tariffs__wrapper {
-    width: 78%;
+    box-sizing: border-box;
+    width: 100%;
     margin-top: -20px;
     padding: 0 11%;
     padding-top: 167px;
@@ -1637,6 +1671,26 @@ template {
   display: block;
   margin: 0 auto;
 }
+.gallery__best {
+  position: relative;
+}
+.gallery__best::before {
+  content: "Панорама дня";
+  position: absolute;
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 8px 20px;
+  z-index: 2;
+  left: 50%;
+  top: 0;
+  font-family: "Open Sans Bold";
+  font-size: 12px;
+  line-height: 24px;
+  color: #ffffff;
+  background-color: #d22856;
+  text-transform: uppercase;
+}
 .gallery__item {
   display: flex;
   flex-direction: column;
@@ -1695,15 +1749,13 @@ template {
     flex-wrap: wrap;
     padding: 0 6%;
   }
-  .gallery__photo--main {
-    max-width: none;
-    margin: 0;
-    margin-left: 50%;
-    height: 509px;
-    left: -600px;
-  }
   .gallery__review {
     margin: 0;
+  }
+  .gallery__best::before {
+    left: auto;
+    right: 6%;
+    top: 57px;
   }
   .gallery__review {
     display: flex;
@@ -1723,6 +1775,7 @@ template {
   .gallery__review--main {
     position: relative;
     margin: 0 6%;
+    margin-bottom: 50px;
   }
   .gallery__desc--main {
     width: 100%;
@@ -1734,20 +1787,49 @@ template {
     height: 509px;
     left: -600px;
   }
+  .gallery__like--main {
+    position: absolute;
+    padding-left: 0;
+    padding-right: 30px;
+    right: 27px;
+  }
+  .gallery__like--main::before {
+    left: auto;
+    right: 0;
+    top: 50%;
+    margin-top: -7px;
+  }
   @supports (display:grid) {
     .gallery__wrapper {
       box-sizing: border-box;
       width: 100%;
-      max-width: 1200px;
       margin: 0 auto;
-      padding: 0;
+      padding: 0 6%;
       display: grid;
       grid-template-columns: repeat(auto-fill, 300px);
-      grid-gap: 20px;
+      grid-gap: 15px;
       justify-content: space-between;
     }
     .gallery__item {
       margin-bottom: 0px;
     }
+  }
+}
+@media (min-width:1200px) {
+  .gallery__wrapper {
+    padding: 0 11%;
+  }
+  .gallery__photo--main {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    left: auto;
+  }
+  .gallery__review--main {
+    position: relative;
+    margin: 0 11%;
+  }
+  .gallery__best::before {
+    right: 11%;
   }
 }
