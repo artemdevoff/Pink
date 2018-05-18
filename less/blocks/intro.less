@@ -85,11 +85,50 @@
   color: @color-white;
 }
 
+//INTRO INNER
+.intro--inner {
+  .flex(column, center, center);
+  background-image: url(../img/back.jpg);
+  background-repeat: no-repeat;
+  background-position: center top 0px;
+  background-size: cover;
+  @media @retina {
+    background-image: url(../img/back-tablet@2x.jpg);
+    background-position: center top 0px;
+    background-size: auto 460px;
+  }
+}
+
+.intro__header {
+  position: relative;
+  padding: 100px 23%;
+  padding-top: 100px;
+  font-family: "Open Sans Light";
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.intro__about {
+  margin-top: auto;
+  min-height: 96px;
+  padding: 45px 38px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 30px;
+  background-color: @color-white;
+  color: @color-dark-blue;
+  text-align: center;
+}
+
+
+
 @media @tablet-width {
   .intro {
     //    min-height: 730px;
-    min-height: 100vh; 
-        margin-top: -110px;
+    min-height: 100vh;
+    margin-top: -110px;
     background-image: url(../img/intro-iphone-tab.png), url(../img/back.jpg);
     background-position: center bottom 0px, center top 0px;
     @media @retina {
@@ -99,6 +138,7 @@
 
     }
   }
+
   .intro__wrapper {
     .container();
   }
@@ -139,8 +179,41 @@
   .intro__icon--android {
     opacity: 0.4;
     height: 52px;
+  } 
+  
+  //INTRO INNER//
+  .intro--inner {
+    min-height: 670px;
+    background-image: url(../img/back.jpg);
+    background-position: center top 0px;
+    @media @retina {
+      background-image: url(../img/back-tablet@2x.jpg);
+      background-position: center top 0px;
+      background-size: auto 730px;
+
+    }
+  }
+
+  .intro__header {
+    padding: 140px 23%;
+    padding-top: 180px;
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .intro__about {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: auto;
+    min-height: 96px;
+    padding: 95px 6%;
+    padding-bottom: 75px;
+    font-size: 18px;
   }
 }
+
+
+
 
 @media @desctop-width {
   .intro {
@@ -151,6 +224,15 @@
     @media @retina {
       background-image: url(../img/intro-iphone-desc@2x.png), url(../img/back-desktop@2x.jpg);
       background-size: auto 650px, auto 870px;
+    }
+
+  }
+  .intro--inner {
+    background-image: url(../img/back-desctop.jpg);
+    background-position: center top 0px;
+    @media @retina {
+      background-image: url(../img/back-desktop@2x.jpg);
+      background-size: auto 870px;
     }
   }
   .intro__inform {
@@ -178,5 +260,12 @@
   }
   .intro__icon--android {
     opacity: 1;
+  }
+  //INTRO INNER//
+  .intro__about{
+    box-sizing: content-box;
+    width: 50%;
+    min-height: none;
+    padding: 90px 25%;
   }
 }
