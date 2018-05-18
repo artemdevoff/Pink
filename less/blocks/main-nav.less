@@ -31,16 +31,9 @@
     margin-bottom: auto;
     background: transparent url(../img/icons/open-btn.svg) 0 0 no-repeat;
     cursor: pointer;
-    &:hover {
-      background-image: url(../img/icons/open-btn-hover.svg);
-    }
   }
   .main-nav__button--opened {
     background: transparent url(../img/icons/close-btn.svg) center no-repeat;
-
-    &:hover {
-      background: transparent url(../img/icons/close-btn-hover.svg) center no-repeat;
-    }
   }
   .main-nav__items {
     display: none;
@@ -77,6 +70,17 @@
 @media @tablet-width {
   .main-nav__toogle {
     min-height: 110px;
+  }
+  .main-nav__button {
+    &:hover {
+      background-image: url(../img/icons/open-btn-hover.svg);
+    }
+  }
+  .main-nav__button--opened {
+
+    &:hover {
+      background: transparent url(../img/icons/close-btn-hover.svg) center no-repeat;
+    }
   }
 
 }
