@@ -1228,11 +1228,14 @@ template {
 }
 @media (min-width:1200px) {
   .tariffs {
-    background-image: url(../img/price-back-desc.jpg);
-    background-position: center bottom;
+    background-image: url(../img/advant-back-desc.jpg);
+    background-position: top 40px center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .tariffs__wrapper {
-    width: 78%;
+    box-sizing: border-box;
+    width: 100%;
     margin-top: -20px;
     padding: 0 11%;
     padding-top: 167px;
