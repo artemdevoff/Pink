@@ -1886,6 +1886,9 @@ template {
   padding: 0 6%;
 }
 .competition-form__desc {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   box-sizing: border-box;
   width: 100%;
   height: 60px;
@@ -1895,6 +1898,10 @@ template {
   font-size: 18px;
   border: 2px solid #e5e5e5;
   color: #283645;
+  background-color: #ffffff;
+  box-shadow: none;
+  outline: none;
+  outline-offset: none;
 }
 .competition-form__desc--textarea {
   box-sizing: border-box;
@@ -1905,8 +1912,6 @@ template {
   min-height: 150px;
   font-family: "Open Sans";
   white-space: pre-wrap;
-  outline: none;
-  -moz-appearance: none;
   resize: none;
 }
 .competition-form__tel button {
@@ -1929,7 +1934,8 @@ template {
   padding: 0;
 }
 .competition-form__legend,
-.competition-form input[type="checkbox"] {
+.competition-form input[type="checkbox"],
+.competition-form input[type="radio"] {
   display: none;
 }
 .competition-form__fieldset {
@@ -1972,7 +1978,8 @@ template {
 .competition-form__label--app {
   border-radius: 50%;
 }
-.competition-form__item input[type="checkbox"]:checked + label::before {
+.competition-form__item input[type="checkbox"]:checked + label::before,
+.competition-form__item input[type="radio"]:checked + label::before {
   content: "";
   position: absolute;
   width: 22px;
@@ -1984,7 +1991,7 @@ template {
   background-image: url(../img/tick.svg);
   background-repeat: no-repeat;
 }
-.competition-form__item input[type="checkbox"]:checked + label.competition-form__label--app::before {
+.competition-form__item input[type="radio"]:checked + label.competition-form__label--app::before {
   width: 16px;
   height: 16px;
   margin-left: -8px;

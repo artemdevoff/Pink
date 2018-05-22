@@ -36,6 +36,9 @@
     padding: 0 6%;
   }
   &__desc {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     box-sizing: border-box;
     width: 100%;
     height: 60px;
@@ -45,6 +48,10 @@
     font-size: 18px;
     border: 2px solid @color-price;
     color: @color-dark-blue;
+    background-color: @color-white;
+    box-shadow: none;
+    outline: none;
+    outline-offset: none;
   }
   &__desc--textarea {
     box-sizing: border-box;
@@ -55,8 +62,6 @@
     min-height: 150px;
     font-family: "Open Sans";
     white-space: pre-wrap;
-    outline: none;
-    -moz-appearance: none;
     resize: none;
   }
   &__tel {
@@ -82,7 +87,8 @@
     padding: 0;
   }
   &__legend,
-  input[type="checkbox"] {
+  input[type="checkbox"],
+  input[type="radio"]{
     display: none;
   }
   &__fieldset {
@@ -119,7 +125,8 @@
   &__label--app {
     border-radius: 50%;
   }
-  &__item input[type="checkbox"]:checked + label::before {
+  &__item input[type="checkbox"]:checked + label::before,
+   &__item input[type="radio"]:checked + label::before{
     content: "";
     position: absolute;
     width: 22px;
@@ -131,7 +138,7 @@
     background-image: url(../img/tick.svg);
     background-repeat: no-repeat;
   }
-  &__item input[type="checkbox"]:checked + label.competition-form__label--app::before {
+  &__item input[type="radio"]:checked + label.competition-form__label--app::before {
     width: 16px;
     height: 16px;
     margin-left: -8px;
@@ -227,7 +234,6 @@
       padding: 20px;
     }
     &__desc--textarea {
-//      box-sizing: border-box;
       width: 100%;
       min-height: 180px;
       padding: 20px;

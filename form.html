@@ -33,8 +33,7 @@
       <p class="intro__about">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="intro__form">Пожалуйста, заполните форму ниже:</span></p>
     </div>
   </header>
-  <form action="" class="competition-form">
-<!--<div class="competition-form__wrapper">-->
+  <form action="#" class="competition-form" method="post">
     <div class="competition-form__group competition-form__group--name">
       <div class="competition-form__subject-info">
         <label for="surname" class="competition-form__title">Фамилия:</label>
@@ -56,23 +55,22 @@
       <fieldset class="competition-form__fieldset">
         <legend class="competition-form__legend">С каким приложением путешествовали?</legend>
         <div class="competition-form__item">
-          <input id="ios" name="app-type" type="checkbox" checked>
+          <input id="ios" name="app-type" type="radio" value="ios" checked>
           <label for="ios" class="competition-form__label competition-form__label--app"></label>
           <p class="competition-form__text">Pink для IOS</p>
         </div>
         <div class="competition-form__item">
-          <input id="android" name="app-type" type="checkbox">
+          <input id="android" name="app-type" type="radio" value="android">
           <label for="android" class="competition-form__label competition-form__label--app"></label>
           <p class="competition-form__text">Pink для Android</p>
         </div>
         <div class="competition-form__item">
-          <input id="windows" name="app-type" type="checkbox">
+          <input id="windows" name="app-type" type="radio" value="windows">
           <label for="windows" class="competition-form__label competition-form__label--app"></label>
           <p class="competition-form__text">Windows Phone</p>
         </div>
       </fieldset>
     </div>
-<!--    </div>-->
     <div class="competition-form__group competition-form__group--activities">
       <h2 class="competition-form__title competition-form__title--group">Ваши безбашенные достижения в путешествии</h2>
       <fieldset class="competition-form__fieldset">
@@ -120,9 +118,9 @@
         <legend class="competition-form__legend">Контактная информация</legend>
         <div class="competition-form__wrapper">
         <div class="competition-form__subject-info competition-form__subject-info--contacts">
-          <label for="" class="competition-form__title">Номер телефона</label>
+          <label for="tel" class="competition-form__title">Номер телефона</label>
           <div class="competition-form__tel">
-            <input type="text" class="competition-form__desc competition-form__desc--tel" placeholder="+7 ХХХ ХХХ-ХХ-ХХ">
+            <input id="tel" type="tel" class="competition-form__desc competition-form__desc--tel" placeholder="+7 ХХХ ХХХ-ХХ-ХХ">
             <button type="submit">
              <svg width="20" height="20" class="competition-form__icon">
               <use xlink:href="#form-phone"></use>
@@ -131,9 +129,9 @@
           </div>
         </div>
         <div class="competition-form__subject-info competition-form__subject-info--contacts">
-          <label for="" class="competition-form__title">Адрес почты</label>
+          <label for="email" class="competition-form__title">Адрес почты</label>
           <div class="competition-form__tel">
-            <input type="text" class="competition-form__desc competition-form__desc--tel" placeholder="Введите почту">
+            <input id="email" type="email" class="competition-form__desc competition-form__desc--tel" placeholder="Введите почту">
             <button type="submit">
              <svg width="20" height="20" class="competition-form__icon">
               <use xlink:href="#form-mail"></use>
@@ -183,6 +181,7 @@
     </div>
   </footer>
   
+  <script src="js/jquery-3.0.0.min.js"></script>
   <script src="js/custom.js"></script>
 
 </body>
