@@ -1,0 +1,437 @@
+.competition-form {
+  .flex(column);
+  background-color: @color-white;
+  font-family: "Opens Sans";
+  font-size: 14px;
+  line-height: 30px;
+  color: @color-dark-blue;
+  &__group {
+    background-color: @color-photo;
+    padding: 0 6%;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    margin-bottom: 45px;
+  }
+  &__group--name,
+  &__group--info,
+  &__group--review {
+    background-color: @color-white;
+  }
+  &__group--name {
+    order: 0;
+    padding: 0 6%;
+  }
+  &__group--activities {
+    order: 1;
+  }
+  &__group--app {
+    order: 3;
+  }
+  &__group--info {
+    order: 2;
+    padding: 0 6%;
+  }
+  &__group--review {
+    order: 4;
+    padding: 0 6%;
+  }
+  &__desc {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    display: block;
+    margin-bottom: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: 2px solid @color-price;
+    color: @color-dark-blue;
+  }
+  &__desc--textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 30px;
+    min-height: 150px;
+    font-family: "Open Sans";
+    white-space: pre-wrap;
+    outline: none;
+    -moz-appearance: none;
+    resize: none;
+  }
+  &__tel {
+    button {
+      display: none;
+    }
+  }
+  &__title {
+    display: block;
+    margin: 0;
+    padding-bottom: 10px;
+    padding-left: 24px;
+    font-size: 14px;
+    color: @color-pink;
+    font-weight: normal;
+    text-transform: uppercase;
+
+  }
+  &__title--group {
+    text-align: center;
+    line-height: 18px;
+    margin-bottom: 35px;
+    padding: 0;
+  }
+  &__legend,
+  input[type="checkbox"] {
+    display: none;
+  }
+  &__fieldset {
+    .flex(column);
+    flex-wrap: wrap;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    .flex();
+    align-items: center;
+    margin-bottom: 40px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__text {
+    font-size: 18px;
+    padding-left: 33px;
+  }
+  &__label {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    background-color: @color-white;
+    border: 2px solid @color-price;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  &__label--app {
+    border-radius: 50%;
+  }
+  &__item input[type="checkbox"]:checked + label::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 16px;
+    left: 50%;
+    top: 50%;
+    margin-left: -11px;
+    margin-top: -8px;
+    background-image: url(../img/tick.svg);
+    background-repeat: no-repeat;
+  }
+  &__item input[type="checkbox"]:checked + label.competition-form__label--app::before {
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
+    margin-top: -8px;
+    background-color: @color-pink;
+    border-radius: 50%;
+  }
+
+}
+
+.competition-form::-moz-placeholder {
+  .placeholder();
+}
+
+.competition-form::-webkit-input-placeholder {
+  .placeholder();
+}
+
+.competition-form:-ms-input-placeholder {
+  .placeholder();
+}
+
+.btn {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 18px;
+  font-family: "Open Sans Bold";
+  font-size: 18px;
+  line-height: 30px;
+  color: @color-white;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  background-color: @color-btn-green;
+  border: 2px solid @color-btn-green;
+  border-radius: 2px;
+  cursor: pointer;
+  &__wrapper {
+    order: 5;
+    padding: 0 6%;
+    padding-bottom: 55px;
+  }
+}
+
+.required-field {
+  text-transform: uppercase;
+  text-align: center;
+  span {
+    display: none;
+  }
+  span&__star {
+    display: inline-block;
+    color: @color-pink;
+  }
+}
+
+@media @tablet-width {
+  .competition-form {
+    &__group {
+      background-color: @color-white;
+      padding: 0 6%;
+      margin-bottom: 50px;
+    }
+    &__group--activities {
+      order: 3;
+    }
+    &__group--app {
+      order: 1;
+    }
+    &__group--info {
+      order: 2;
+    }
+    &__group--review {
+      order: 4;
+    }
+    &__subject-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    &__desc {
+      box-sizing: border-box;
+      width: 80%;
+      display: block;
+      margin-bottom: 0px;
+      padding: 20px;
+    }
+    &__desc--textarea {
+//      box-sizing: border-box;
+      width: 100%;
+      min-height: 180px;
+      padding: 20px;
+      font-size: 18px;
+      line-height: 30px;
+      font-family: "Open Sans";
+      white-space: pre-wrap;
+      outline: none;
+      -moz-appearance: none;
+      resize: none;
+    }
+    &__subject-info--contacts {
+      margin-bottom: 30px;
+      .competition-form__tel {
+        .flex();
+        width: 100%;
+        box-sizing: border-box;
+        order: -1;
+        margin-bottom: 15px;
+        button {
+          display: block;
+          background-color: @color-price;
+          box-sizing: border-box;
+          width: 60px;
+          height: 60px;
+          border: 2px solid @color-price;
+          outline: none;
+          border: none;
+        }
+      }
+      .competition-form__desc--tel {
+        flex-grow: 1;
+      }
+      .competition-form__title {
+        padding-left: 20px;
+      }
+    }
+    &__title {
+      padding: 0;
+    }
+    &__title--group {
+      display: none;
+    }
+    &__legend {
+      display: inline;
+      padding: 0 25px;
+      font-family: "Open Sans";
+      font-size: 14px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: @color-pink;
+      text-align: center;
+    }
+    &__fieldset {
+      border: 2px solid @color-price;
+      padding: 40px 10%;
+      padding-bottom: 30px;
+    }
+  }
+  .btn {
+    width: 300px;
+    margin-bottom: 0;
+    &__wrapper {
+      .flex();
+      order: 5;
+      padding-bottom: 0;
+      margin-bottom: 60px;
+    }
+  }
+  .required-field {
+    align-self: center;
+    margin-left: auto;
+  }
+}
+
+@media @desctop-width {
+  .competition-form {
+    .flex(row, space-between);
+    flex-wrap: wrap;
+    padding: 0 11%;
+    &__wrapper {
+      .flex(row, space-between);
+      flex-wrap: wrap;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__group {
+      background-color: @color-white;
+      padding: 0;
+      margin-bottom: 50px;
+    }
+    &__group--name {
+      .flex(column, space-between);
+      width: 46.5%;
+      margin-top: 25px;
+      margin-bottom: 50px;
+      order: 0;
+    }
+    &__group--app {
+      order: 1;
+      width: 46.5%;
+      padding: 0;
+
+      .competition-form__item {
+        box-sizing: border-box;
+        width: 100%;
+        padding-left: 10%;
+      }
+    }
+
+    &__group--activities {
+      .flex();
+      flex-wrap: wrap;
+      order: 3;
+      width: 100%;
+      padding: 0;
+      box-sizing: border-box;
+
+      fieldset {
+        width: 100%;
+      }
+
+      .competition-form__item {
+        padding-left: 0;
+        width: 30%;
+        &:last-child {
+          margin-bottom: 40px;
+        }
+      }
+    }
+    &__group--review {
+      width: 100%;
+    }
+
+    @supports(display:grid) {
+      .competition-form__group--activities {
+        .competition-form__wrapper {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+          justify-content: space-between;
+        }
+        .competition-form__item {
+          width: auto;
+        }
+      }
+    }
+
+    &__group--info {
+      order: 2;
+      width: 100%;
+      box-sizing: border-box;
+      
+      fieldset{
+        padding: 20px 6%;
+        padding-bottom: 10px;
+      }
+    }
+    &__group--review {
+      order: 4;
+            fieldset{
+        padding: 30px 6%;
+        padding-bottom: 45px;
+      }
+    }
+    &__subject-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 50px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    &__subject-info--contacts {
+      .flex(column, flex-start, flex-start);
+      flex-wrap: wrap;
+      width: 46%;
+      margin-bottom: 0;
+      .competition-form__title {
+        padding-left: 20px;
+      }
+    }
+    &__fieldset {
+      padding: 40px 6%;
+    }
+  }
+
+  .btn {
+    display: block;
+    &__wrapper {
+      .flex(row, space-between);
+      width: 100%;
+      margin-bottom: 40px;
+      padding: 0;
+    }
+  }
+
+  .required-field {
+    span {
+      display: inline;
+    }
+  }
+
+}
