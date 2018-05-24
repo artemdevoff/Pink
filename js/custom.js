@@ -11,7 +11,6 @@
 
   });
 
-
   $('.review__items').slick({
     mobileFirst: true,
     slidesToShow: 1,

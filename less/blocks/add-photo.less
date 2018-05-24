@@ -1,0 +1,333 @@
+/* ADD PHOTO */
+
+.add-photo {
+  padding-top: 25px;
+  background-color: @color-white;
+}
+
+.add-photo__title {
+  padding: 0 6%;
+  margin-bottom: 40px;
+  h2 {
+    width: 280px;
+    margin: 0 auto;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    font-size: 14px;
+    line-height: 30px;
+    color: @color-dark-blue;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+.add-photo__wrapper {
+  position: relative;
+  padding: 20px 6%;
+  padding-bottom: 28px;
+  background-color: @color-photo;
+}
+
+.add-photo__img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.add-photo__filter-buttons {
+  .flex(row, space-between, center);
+  width: 200px;
+  padding: 0 40px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  button {
+    background: none;
+    outline: none;
+    border: none;
+  }
+  .add-photo__icon {
+    background: none;
+    fill: @color-dark-blue;
+    opacity: 0.3;
+    cursor: pointer;
+    .transition();
+    &:hover {
+      opacity: 0.5;
+      .transition();
+    }
+    &--active {
+      opacity: 1;
+      fill: @color-pink;
+      .transition(all, 0.01s);
+    }
+  }
+}
+
+.add-photo__filter-input {
+  position: relative;
+  padding-bottom: 35px;
+  input[type=range] {
+    -webkit-appearance: none;
+    position: absolute;
+    width: 240px;
+    height: 16px;
+    margin: 0 auto;
+    padding: 0;
+    top: 0;
+    left: 8%;
+    right: 8%;
+    background-color: @color-photo;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    border: 2px solid @color-pink;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: @color-photo;
+    cursor: pointer;
+    margin-top: -7px;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    border: 2px solid @color-pink;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: @color-photo;
+    cursor: pointer;
+    margin-top: -5px;
+
+  }
+
+  input[type=range]::-ms-thumb {
+    display: inline-block;
+    border: 2px solid @color-pink;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: @color-photo;
+    cursor: pointer;
+    margin-top: 3px;
+  }
+
+
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 2px;
+    border-color: transparent;
+    color: transparent;
+    background-color: @color-dark-blue;
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 2px;
+    background-color: @color-dark-blue;
+  }
+
+  input[type=range]::-ms-track {
+    border-color: transparent;
+    color: transparent;
+    height: 0px;
+    background-color: @color-dark-blue;
+  }
+}
+
+.add-photo__buttons {
+  position: relative;
+  padding-top: 38px;
+  button {
+    cursor: pointer;
+    display: block;
+    width: 280px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    font-family: "Open Sans Bold";
+    font-size: 18px;
+    line-height: 18px;
+    color: @color-pink;
+    text-decoration: none;
+    background: transparent;
+    border: 3px solid @color-pink;
+    border-radius: 25px;
+    text-align: center;
+    .transition();
+    &::before {
+      .pseudo("", 280px, 1px);
+      left: 50%;
+      top: 0px;
+      margin-left: -140px;
+      background-color: fade(@color-dark-blue, 10%);
+    }
+    &:hover {
+      background: @color-pink;
+      color: @color-white;
+      .transition();
+    }
+    &:active {
+      color: fade(@color-white, 30%);
+      .transition();
+    }
+  }
+  .add-photo__cancel {
+    color: fade(@color-dark-blue, 10%);
+    border: 3px solid fade(@color-dark-blue, 10%);
+    &:hover {
+
+      color: fade(@color-dark-blue, 30%);
+      border: 3px solid fade(@color-dark-blue, 30%);
+      background: none;
+      .transition();
+    }
+    &:active {
+      background: fade(@color-dark-blue, 30%);
+      color: fade(@color-white, 30%);
+      border: 3px solid transparent;
+      .transition();
+    }
+  }
+
+}
+
+.add-photo__filter-item {
+  button {
+    display: none;
+  }
+}
+
+
+@media @tablet-width {
+  .add-photo {
+    padding-top: 65px;
+  }
+  .add-photo__title {
+    margin-bottom: 60px;
+    h2 {
+      width: auto;
+      font-size: 18px;
+    }
+  }
+  .add-photo__wrapper {
+    padding: 55px 6%;
+    .flex(row, space-between);
+  }
+  .add-photo__filter {
+    .flex(column, space-between);
+    flex-grow: 1;
+    margin-left: 8%;
+  }
+  .add-photo__img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0px;
+  }
+  .add-photo__filter-buttons {
+    display: none;
+  }
+  .add-photo__filter-item {
+    .flex(row, space-between, center);
+    padding: 25px 0px;
+    border-bottom: 1px solid fade(@color-dark-blue, 10%);
+    button {
+      display: block;
+      background: none;
+    }
+    &:first-of-type {
+      padding-top: 10px;
+    }
+    .add-photo__icon {
+      fill: @color-pink;
+      width: 22px;
+      height: 22px;
+      padding: 0 1px;
+      &--fill {
+        width: 24px;
+        height: 22px;
+        padding: 0;
+      }
+      &--contrast {
+        width: 16px;
+        height: 16px;
+        padding: 0 3px;
+      }
+    }
+  }
+  .add-photo__filter-input {
+    position: relative;
+    padding-bottom: 0;
+    input[type="range"] {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      width: 75%;
+    }
+  }
+  .add-photo__buttons {
+    padding-top: 0px;
+    button {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px;
+      margin: 0 auto;
+      margin-bottom: 24px;
+      &::before {
+        display: none;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    .add-photo__cancel {
+      color: fade(@color-dark-blue, 10%);
+      border: 3px solid fade(@color-dark-blue, 10%);
+    }
+  }
+
+}
+
+
+@media @desctop-width {
+  .add-photo {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  .add-photo__title {
+    padding: 0 11%;
+  }
+  .add-photo__wrapper {
+    padding: 55px 11%;
+  }
+  .add-photo__filter {
+    margin-left: 15%;
+  }
+  .add-photo__filter-item {
+    .add-photo__icon {
+      width: 44px;
+      height: 44px;
+      padding-left: 2px;
+      &--fill {
+        width: 48px;
+      }
+      &--contrast {
+        width: 32px;
+        height: 32px;
+        padding-left: 8px;
+      }
+    }
+  }
+  .add-photo__buttons {
+    .flex(row, space-between);
+    padding: 0;
+    button {
+      width: 45%;
+      margin: 0;
+    }
+  }
+}

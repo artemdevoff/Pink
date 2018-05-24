@@ -1,3 +1,5 @@
+/* INTRO */
+
 .intro {
   display: block;
   position: relative;
@@ -87,7 +89,7 @@
 
 //INTRO INNER
 .intro--inner {
-  .flex(column, center, center);
+  .flex(column, flex-end, center);
   min-height: auto;
   background-image: url(../img/back.jpg);
   background-repeat: no-repeat;
@@ -117,7 +119,7 @@
   box-sizing: border-box;
   width: 100%;
   margin-top: auto;
-  padding: 45px 20px;
+  padding: 45px 6%;
   font-family: "Open Sans";
   font-size: 14px;
   line-height: 30px;
@@ -135,7 +137,6 @@
 
 @media @tablet-width {
   .intro {
-    //    min-height: 730px;
     min-height: 100vh;
     margin-top: -110px;
     background-image: url(../img/intro-iphone-tab.png), url(../img/back.jpg);
@@ -188,7 +189,8 @@
   .intro__icon--android {
     opacity: 0.4;
     height: 52px;
-  } //INTRO INNER//
+  }
+  /* INTRO INNER */
   .intro--inner {
     min-height: 670px;
     background-image: url(../img/back.jpg);
@@ -220,12 +222,8 @@
   }
 }
 
-
-
-
 @media @desctop-width {
   .intro {
-    //    min-height: 853px;
     margin-top: 0;
     background-image: url(../img/intro-iphone-desc.png), url(../img/back-desctop.jpg);
     background-position: right 0% bottom 0px, center top 0px;
@@ -234,14 +232,6 @@
       background-size: auto 650px, auto 870px;
     }
 
-  }
-  .intro--inner {
-    background-image: url(../img/back-desctop.jpg);
-    background-position: center top 0px;
-    @media @retina {
-      background-image: url(../img/back-desktop@2x.jpg);
-      background-size: auto 870px;
-    }
   }
   .intro__inform {
     width: 32%;
@@ -268,8 +258,19 @@
   }
   .intro__icon--android {
     opacity: 1;
-  } //INTRO INNER//
+  }
+  /* INTRO INNER */
+  .intro--inner {
+    min-height: auto;
+    background-image: url(../img/back-desctop.jpg);
+    background-position: center top 0px;
+    @media @retina {
+      background-image: url(../img/back-desktop@2x.jpg);
+      background-size: auto 870px;
+    }
+  }
   .intro__about {
+    flex-grow: 1;
     box-sizing: content-box;
     width: 50%;
     min-height: none;

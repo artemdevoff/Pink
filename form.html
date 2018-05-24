@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="css/style.min.css">
   <script src="js/svgsprite.js"></script>
   <script src="js/preload.js"></script>
-  <script src="picturefill.min.js"></script>
+  <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+      document.write('<script src="js/picturefill.min.js"><\/script>');
+  </script>
 </head>
 
 <body>
@@ -24,7 +27,7 @@
           <li class="main-nav__item"><a class="main-nav__links" href="index.html">Главная</a></li>
           <li class="main-nav__item "><a href="photo.html" class="main-nav__links">Фотографии</a></li>
           <li class="main-nav__item"><a class="main-nav__links main-nav__links--active">Конкурс</a></li>
-          <li class="main-nav__item"><a href="#" class="main-nav__links">Html Academy</a></li>
+          <li class="main-nav__item"><a href="https://htmlacademy.ru/profile/id399613" class="main-nav__links">Html Academy</a></li>
         </ul>
       </div>
     </nav>
@@ -37,25 +40,25 @@
     <div class="competition-form__group competition-form__group--name">
       <div class="competition-form__subject-info">
         <label for="surname" class="competition-form__title">Фамилия:</label>
-        <input type="text" class="competition-form__desc" id="surname" name="name" placeholder="Укажите фамилию">
+        <input type="text" class="competition-form__desc" id="surname" name="name" placeholder="Укажите фамилию" autocomplete="off">
       </div>
       <div class="competition-form__subject-info">
         <label for="name" class="competition-form__title">Имя:</label>
-        <input id="name" type="text" class="competition-form__desc" placeholder="Введите ваше имя">
+        <input id="name" type="text" class="competition-form__desc" placeholder="Введите ваше имя" autocomplete="off">
       </div>
       <div class="competition-form__subject-info">
         <label for="last-name" class="competition-form__title">Отчество:</label>
-        <input id="last-name" type="text" class="competition-form__desc" placeholder="Ну и отчество тоже">
-      </div>     
+        <input id="last-name" type="text" class="competition-form__desc" placeholder="Ну и отчество тоже" autocomplete="off">
+      </div>
     </div>
-    
+
     <div class="competition-form__group competition-form__group--app">
       <h2 class="competition-form__title competition-form__title--group">С каким приложением путешествовали?
       </h2>
       <fieldset class="competition-form__fieldset">
-        <legend class="competition-form__legend">С каким приложением путешествовали?</legend>
+        <legend class="competition-form__legend" align="center">С каким приложением путешествовали?</legend>
         <div class="competition-form__item">
-          <input id="ios" name="app-type" type="radio" value="ios" checked>
+          <input id="ios" name="app-type" type="radio" value="ios" checked >
           <label for="ios" class="competition-form__label competition-form__label--app"></label>
           <p class="competition-form__text">Pink для IOS</p>
         </div>
@@ -74,71 +77,71 @@
     <div class="competition-form__group competition-form__group--activities">
       <h2 class="competition-form__title competition-form__title--group">Ваши безбашенные достижения в путешествии</h2>
       <fieldset class="competition-form__fieldset">
-        <legend class="competition-form__legend">
+        <legend class="competition-form__legend" align="center">
           Ваши безбашенные достижения в путешествии
         </legend>
         <div class="competition-form__wrapper">
-        <div class="competition-form__item">
-          <input name="activities" type="checkbox" id="shark" name="item" checked>
-          <label for="shark" class="competition-form__label"></label>
-          <p class="competition-form__text">Сделал селфи с акулой</p>
-        </div>
-        <div class="competition-form__item">
-          <input name="activities" type="checkbox" id="beach" checked>
-          <label for="beach" class="competition-form__label"></label>
-          <p class="competition-form__text">Обгорел на пляже</p>
-        </div>
-        <div class="competition-form__item">
-          <input id="chuck" name="activities" type="checkbox">
-          <label for="chuck" class="competition-form__label"></label>
-          <p class="competition-form__text">Видел Чака Норриса</p>
-        </div>
-        <div class="competition-form__item">
-          <input id="souvenir" name="activities" type="checkbox">
-          <label for="souvenir" class="competition-form__label"></label>
-          <p class="competition-form__text">Накупил сувениров</p>
-        </div>
-        <div class="competition-form__item">
-          <input id="tower" name="activities" type="checkbox" checked>
-          <label for="tower" class="competition-form__label"></label>
-          <p class="competition-form__text">Удержал башню</p>
-        </div>
-        
-        <div class="competition-form__item">
-          <input id="destroy" name="activities" type="checkbox">
-          <label for="destroy" class="competition-form__label"></label>
-          <p class="competition-form__text">Разгромил отель</p>
-        </div>
+          <div class="competition-form__item">
+            <input name="activities" type="checkbox" id="shark" name="item" checked>
+            <label for="shark" class="competition-form__label"></label>
+            <p class="competition-form__text">Сделал селфи с акулой</p>
+          </div>
+          <div class="competition-form__item">
+            <input name="activities" type="checkbox" id="beach" checked>
+            <label for="beach" class="competition-form__label"></label>
+            <p class="competition-form__text">Обгорел на пляже</p>
+          </div>
+          <div class="competition-form__item">
+            <input id="chuck" name="activities" type="checkbox">
+            <label for="chuck" class="competition-form__label"></label>
+            <p class="competition-form__text">Видел Чака Норриса</p>
+          </div>
+          <div class="competition-form__item">
+            <input id="souvenir" name="activities" type="checkbox">
+            <label for="souvenir" class="competition-form__label"></label>
+            <p class="competition-form__text">Накупил сувениров</p>
+          </div>
+          <div class="competition-form__item">
+            <input id="tower" name="activities" type="checkbox" checked>
+            <label for="tower" class="competition-form__label"></label>
+            <p class="competition-form__text">Удержал башню</p>
+          </div>
+
+          <div class="competition-form__item">
+            <input id="destroy" name="activities" type="checkbox">
+            <label for="destroy" class="competition-form__label"></label>
+            <p class="competition-form__text">Разгромил отель</p>
+          </div>
         </div>
       </fieldset>
     </div>
 
     <div class="competition-form__group competition-form__group--info">
       <fieldset class="competition-form__fieldset">
-        <legend class="competition-form__legend">Контактная информация</legend>
+        <legend class="competition-form__legend" align="center">Контактная информация</legend>
         <div class="competition-form__wrapper">
-        <div class="competition-form__subject-info competition-form__subject-info--contacts">
-          <label for="tel" class="competition-form__title">Номер телефона</label>
-          <div class="competition-form__tel">
-            <input id="tel" type="tel" class="competition-form__desc competition-form__desc--tel" placeholder="+7 ХХХ ХХХ-ХХ-ХХ">
-            <button type="submit">
+          <div class="competition-form__subject-info competition-form__subject-info--contacts">
+            <label for="tel" class="competition-form__title">Номер телефона</label>
+            <div class="competition-form__tel">
+              <input id="tel" type="tel" class="competition-form__desc competition-form__desc--tel" placeholder="+7 ХХХ ХХХ-ХХ-ХХ" autocomplete="off">
+              <button type="submit">
              <svg width="20" height="20" class="competition-form__icon">
               <use xlink:href="#form-phone"></use>
             </svg>
             </button>
+            </div>
           </div>
-        </div>
-        <div class="competition-form__subject-info competition-form__subject-info--contacts">
-          <label for="email" class="competition-form__title">Адрес почты</label>
-          <div class="competition-form__tel">
-            <input id="email" type="email" class="competition-form__desc competition-form__desc--tel" placeholder="Введите почту">
-            <button type="submit">
+          <div class="competition-form__subject-info competition-form__subject-info--contacts">
+            <label for="email" class="competition-form__title">Адрес почты</label>
+            <div class="competition-form__tel">
+              <input id="email" type="email" class="competition-form__desc competition-form__desc--tel" placeholder="Введите почту" autocomplete="off">
+              <button type="submit">
              <svg width="20" height="20" class="competition-form__icon">
               <use xlink:href="#form-mail"></use>
             </svg>
             </button>
+            </div>
           </div>
-        </div>
         </div>
       </fieldset>
     </div>
@@ -147,18 +150,18 @@
       <h2 class="competition-form__title competition-form__title--group">Опишите свои эмоции
       </h2>
       <fieldset class="competition-form__fieldset">
-        <legend class="competition-form__legend">Опишите свои эмоции</legend>
+        <legend class="competition-form__legend" align="center">Опишите свои эмоции</legend>
         <textarea class="competition-form__desc competition-form__desc--textarea" placeholder="Можно прям в красках, не стесняясь в выражениях" rows="10" name="review"></textarea>
       </fieldset>
     </div>
-    <div class="btn__wrapper">
-      <button type="submit" class="btn">Отправить форму</button>
-      <p class="required-field"><span class="required-field__star">*</span> — Обязательные <span>для заполнения </span>поля
+    <div class="competition-form__submit-wrapper">
+      <button type="submit" class="competition-form__submit">Отправить форму</button>
+      <p class="competition-form__required-field"><span class="competition-form__required-field__star">*</span> — Обязательные <span>для заполнения </span>поля
       </p>
     </div>
   </form>
 
-  <footer class="page-footer">
+  <footer class="page-footer page-footer--inner">
     <div class="page-footer__wrapper">
       <a href="" class="page-footer__logo"></a>
       <div class="social">
@@ -180,7 +183,7 @@
       </div>
     </div>
   </footer>
-  
+
   <script src="js/jquery-3.0.0.min.js"></script>
   <script src="js/custom.js"></script>
 
