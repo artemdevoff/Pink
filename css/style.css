@@ -1935,25 +1935,31 @@ template {
   margin-bottom: 30px;
 }
 .add-photo__filter-buttons button {
+  cursor: pointer;
   background: none;
   outline: none;
   border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .add-photo__filter-buttons .add-photo__icon {
   background: none;
   fill: #283645;
   opacity: 0.3;
   cursor: pointer;
-  transition: all 0.3s ease-in;
 }
 .add-photo__filter-buttons .add-photo__icon:hover {
   opacity: 0.5;
-  transition: all 0.3s ease-in;
+  cursor: pointer;
 }
 .add-photo__filter-buttons .add-photo__icon--active {
   opacity: 1;
   fill: #d22856;
-  transition: all 0.01s ease-in;
+}
+.add-photo__filter-buttons .add-photo__icon--active:hover {
+  opacity: 1;
 }
 .add-photo__filter-input {
   position: relative;
@@ -1962,40 +1968,51 @@ template {
 .add-photo__filter-input input[type=range] {
   -webkit-appearance: none;
   position: absolute;
+  display: none;
   width: 240px;
-  height: 16px;
+  height: 20px;
   margin: 0 auto;
   padding: 0;
   top: 0;
   left: 8%;
   right: 8%;
   background-color: #f2f2f2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.add-photo__filter-input input[type=range][data-filter="opacity"] {
+  direction: rtl;
+}
+.add-photo__filter-input input[type=range].add-photo__input--active {
+  display: block;
 }
 .add-photo__filter-input input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   box-sizing: content-box;
   border: 2px solid #d22856;
-  height: 10px;
-  width: 10px;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  margin-top: -9px;
+}
+.add-photo__filter-input input[type=range]::-moz-range-thumb {
+  border: 2px solid #d22856;
+  height: 14px;
+  width: 14px;
   border-radius: 50%;
   background-color: #f2f2f2;
   cursor: pointer;
   margin-top: -7px;
 }
-.add-photo__filter-input input[type=range]::-moz-range-thumb {
-  border: 2px solid #d22856;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #f2f2f2;
-  cursor: pointer;
-  margin-top: -5px;
-}
 .add-photo__filter-input input[type=range]::-ms-thumb {
   display: inline-block;
   border: 2px solid #d22856;
-  height: 10px;
-  width: 10px;
+  height: 14px;
+  width: 14px;
   border-radius: 50%;
   background-color: #f2f2f2;
   cursor: pointer;
@@ -2037,6 +2054,10 @@ template {
   border: 3px solid #d22856;
   border-radius: 25px;
   text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
   transition: all 0.3s ease-in;
 }
 .add-photo__buttons button::before {
@@ -2132,23 +2153,23 @@ template {
     fill: #d22856;
     width: 22px;
     height: 22px;
-    padding: 0 1px;
+    cursor: pointer;
   }
-  .add-photo__filter-item .add-photo__icon--fill {
+  .add-photo__filter-item .add-photo__icon--brightness {
     width: 24px;
-    height: 22px;
-    padding: 0;
+    height: 24px;
   }
   .add-photo__filter-item .add-photo__icon--contrast {
-    width: 16px;
-    height: 16px;
-    padding: 0 3px;
+    width: 20px;
+    height: 20px;
+    padding: 0 1px;
   }
   .add-photo__filter-input {
     position: relative;
     padding-bottom: 0;
   }
   .add-photo__filter-input input[type="range"] {
+    display: block;
     position: relative;
     top: auto;
     left: auto;
@@ -2197,7 +2218,7 @@ template {
     height: 44px;
     padding-left: 2px;
   }
-  .add-photo__filter-item .add-photo__icon--fill {
+  .add-photo__filter-item .add-photo__icon--opacity {
     width: 48px;
   }
   .add-photo__filter-item .add-photo__icon--contrast {
@@ -2276,6 +2297,10 @@ template {
   box-shadow: none;
   outline: none;
   outline-offset: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
   transition: all 0.3s ease-in;
 }
 .competition-form__desc:hover {
@@ -2296,31 +2321,31 @@ template {
   font-family: "Open Sans";
   white-space: pre-wrap;
   resize: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .competition-form__desc--textarea::-webkit-input-placeholder {
   font-size: 18px;
-  line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #283645;
   opacity: 1;
 }
 .competition-form__desc--textarea:-ms-input-placeholder {
   font-size: 18px;
-  line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #283645;
   opacity: 1;
 }
 .competition-form__desc--textarea::-ms-input-placeholder {
   font-size: 18px;
-  line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #283645;
   opacity: 1;
 }
 .competition-form__desc--textarea::placeholder {
   font-size: 18px;
-  line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #283645;
   opacity: 1;
@@ -2400,6 +2425,14 @@ template {
 .competition-form__label--app {
   border-radius: 50%;
 }
+.competition-form__item input[type="checkbox"]:checked + label,
+.competition-form__item input[type="radio"]:checked + label {
+  border: 2px solid #d22856;
+}
+.competition-form__item input[type="checkbox"]:checked + label:hover,
+.competition-form__item input[type="radio"]:checked + label:hover {
+  border: 2px solid #283645;
+}
 .competition-form__item input[type="checkbox"]:checked + label::before,
 .competition-form__item input[type="radio"]:checked + label::before {
   content: "";
@@ -2468,26 +2501,28 @@ span.competition-form__required-field__star {
 }
 .competition-form input::-webkit-input-placeholder {
   font-size: 18px;
-  line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #283645;
   opacity: 1;
 }
 .competition-form input::-moz-placeholder {
   font-size: 18px;
-  line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #283645;
   opacity: 1;
-  line-height: 18px;
 }
 .competition-form input:-ms-input-placeholder {
   font-size: 18px;
-  line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #283645;
   opacity: 1;
-  line-height: 18px;
+}
+@media (hover: none) {
+  label:hover,
+  input:hover,
+  textarea:hover {
+    border-color: #e5e5e5;
+  }
 }
 @media (min-width:700px) {
   .competition-form__group {
@@ -2606,6 +2641,7 @@ span.competition-form__required-field__star {
     border: 2px solid #e5e5e5;
     outline: none;
     border: none;
+    cursor: pointer;
   }
   .competition-form__subject-info--contacts .competition-form__desc--tel {
     flex-grow: 1;

@@ -54,6 +54,10 @@
     box-shadow: none;
     outline: none;
     outline-offset: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
     .transition();
     &:hover {
       border: 2px solid @color-dark-blue;
@@ -74,6 +78,10 @@
     font-family: "Open Sans";
     white-space: pre-wrap;
     resize: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
     &::placeholder {
       .placeholder();
     }
@@ -150,6 +158,14 @@
   &__label--app {
     border-radius: 50%;
   }
+  &__item input[type="checkbox"]:checked + label,
+  &__item input[type="radio"]:checked + label {
+    border: 2px solid @color-pink;
+  }
+  &__item input[type="checkbox"]:checked + label:hover,
+  &__item input[type="radio"]:checked + label:hover {
+    border: 2px solid @color-dark-blue;
+  }
   &__item input[type="checkbox"]:checked + label::before,
   &__item input[type="radio"]:checked + label::before {
     content: "";
@@ -225,12 +241,18 @@
 
 .competition-form input::-moz-placeholder {
   .placeholder();
-  line-height: 18px;
 }
 
 .competition-form input:-ms-input-placeholder {
   .placeholder();
-  line-height: 18px;
+}
+
+@media (hover: none) {
+  label:hover,
+  input:hover,
+  textarea:hover {
+    border-color: @color-price;
+  }
 }
 
 
@@ -344,6 +366,7 @@
           border: 2px solid @color-price;
           outline: none;
           border: none;
+          cursor: pointer;
         }
       }
       .competition-form__desc--tel {

@@ -154,23 +154,23 @@
     </div>
     <div class="add-photo__wrapper">
       <picture>
-        <source media="(min-width:700px)" srcset="img/photo-7-tablet.jpg"> <img src="img/photo-7-mobile.jpg" alt="gallery-photo" class="add-photo__img">
+        <source media="(min-width:700px)" srcset="img/photo-7-tablet.jpg"> <img src="img/photo-7-mobile.jpg" alt="gallery-photo" class="add-photo__img" id="image">
       </picture>
 
       <div class="add-photo__filter">
         <div class="add-photo__filter-buttons">
-          <button type="button">
-            <svg width="48" height="48" class="add-photo__icon add-photo__icon--cut">
-              <use xlink:href="#photo-cut"></use>
-            </svg>  
+          <button type="button" class="add-photo__mobile-btn">
+            <svg width="48" height="48" class="add-photo__icon add-photo__icon--opacity add-photo__icon--mob add-photo__icon--active">
+              <use xlink:href="#photo-opacity"></use>
+            </svg>           
             </button>
-          <button type="button">
-             <svg width="48" height="48" class="add-photo__icon add-photo__icon--fill">
-              <use xlink:href="#photo-fill-01"></use>
-            </svg>
+          <button type="button" class="add-photo__mobile-btn">
+            <svg width="48" height="48" class="add-photo__icon add-photo__icon--brightness add-photo__icon--mob">
+              <use xlink:href="#photo-brightness"></use>
+            </svg>              
             </button>
-          <button type="button">
-             <svg width="32" height="32" class="add-photo__icon add-photo__icon--contrast">
+          <button type="button" class="add-photo__mobile-btn">
+             <svg width="32" height="32" class="add-photo__icon add-photo__icon--contrast add-photo__icon--mob">
               <use xlink:href="#photo-contrast"></use>
             </svg>
             </button>
@@ -178,20 +178,20 @@
 
         <div class="add-photo__filter-input">
           <div class="add-photo__filter-item">
-            <button type="button">
-            <svg class="add-photo__icon add-photo__icon--cut">
-              <use xlink:href="#photo-cut"></use>
-            </svg>  
+            <button type="button" >
+             <svg class="add-photo__icon add-photo__icon--opacity">
+              <use xlink:href="#photo-opacity"></use>
+            </svg>             
             </button>
-            <input type="range" name="" min="0" max="100" step="1" class="add-photo__input" value="46">
+            <input type="range" name="" min="0" max="100" step="1" class="add-photo__input add-photo__input--active" value="100" data-filter="opacity" data-scale="%">
           </div>
           <div class="add-photo__filter-item">
             <button type="button">
-             <svg class="add-photo__icon add-photo__icon--fill">
-              <use xlink:href="#photo-fill-01"></use>
-            </svg>
+            <svg class="add-photo__icon add-photo__icon--brightness">
+              <use xlink:href="#photo-brightness"></use>
+            </svg> 
             </button>
-            <input type="range" name="" min="0" max="100" step="1" class="add-photo__input" value="79">
+            <input type="range" name="" min="0" max="200" step="1" class="add-photo__input" value="100" data-filter="brightness" data-scale="%">
           </div>
           <div class="add-photo__filter-item">
             <button type="button">
@@ -199,7 +199,7 @@
               <use xlink:href="#photo-contrast"></use>
             </svg>
             </button>
-            <input type="range" name="" min="0" max="100" step="1" class="add-photo__input" value="37">
+            <input type="range" name="" min="0" max="200" step="1" class="add-photo__input" value="100" data-filter="contrast" data-scale="%">
           </div>
         </div>
 
@@ -241,7 +241,7 @@
   </footer>
 
   <script src="js/jquery-3.0.0.min.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="js/photo.js"></script>
 
 </body>
 
