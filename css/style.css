@@ -613,7 +613,8 @@ template {
   }
   /* INTRO INNER */
   .intro--inner {
-    min-height: 670px;
+    min-height: 10vh;
+    margin-top: -110px;
     background-image: url(../img/back.jpg);
     background-position: center top 0px;
   }
@@ -624,11 +625,12 @@ template {
     line-height: 60px;
   }
   .intro__about {
-    margin-top: auto;
+    align-self: flex-end;
     min-height: 96px;
     padding: 95px 11%;
     padding-bottom: 75px;
     font-size: 18px;
+    z-index: 10;
   }
   .intro__form {
     display: inline;
@@ -638,7 +640,7 @@ template {
   .intro {
     background-image: url(../img/intro-iphone-tab@2x.png), url(../img/back-tablet@2x.jpg);
     background-position: center bottom 0px, center top 0px;
-    background-size: auto 545px, auto 730px;
+    background-size: auto 545px, auto 100vh;
   }
 }
 @media (min-width:700px) and (min-width:700px) {
@@ -663,7 +665,10 @@ template {
   .intro {
     margin-top: 0;
     background-image: url(../img/intro-iphone-desc.png), url(../img/back-desctop.jpg);
-    background-position: right 0% bottom 0px, center top 0px;
+    background-position: left 60% bottom 0px, center top 0px;
+  }
+  .intro__wrapper {
+    padding-top: 12%;
   }
   .intro__inform {
     width: 32%;
@@ -674,6 +679,7 @@ template {
   .intro__title {
     margin: 0 auto;
     margin-top: 220px;
+    margin-top: 0;
     margin-bottom: 50px;
     padding: 0;
     font-size: 50px;
@@ -708,7 +714,7 @@ template {
 @media (min-width:1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:1200px) and (min-resolution: 144dpi), ~(-webkit-min-device-pixel-ratio: 1.5), ~(min-resolution: 1.5dppx) {
   .intro {
     background-image: url(../img/intro-iphone-desc@2x.png), url(../img/back-desktop@2x.jpg);
-    background-size: auto 650px, auto 870px;
+    background-size: auto 650px, auto 100vh;
   }
 }
 @media (min-width:1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:1200px) and (min-resolution: 144dpi), ~(-webkit-min-device-pixel-ratio: 1.5), ~(min-resolution: 1.5dppx) {
@@ -738,32 +744,31 @@ template {
   margin-bottom: 0px;
 }
 .advantages__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   position: relative;
   width: 88%;
   padding: 0 6%;
   padding-top: 115px;
-  padding-bottom: 315px;
   text-align: center;
   background-image: url(../img/advant-back.jpg);
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.advantages__items::after {
-  content: "";
-  position: absolute;
-  display: block;
+.advantages__image {
+  align-self: center;
+  order: 2;
   width: 157px;
-  height: 320px;
-  bottom: -43px;
-  left: 50%;
-  margin-left: -78px;
+  height: 286px;
   background: url(../img/advant-iphone.png) no-repeat;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), ~(-webkit-min-device-pixel-ratio: 1.5), ~(min-resolution: 1.5dppx) {
-  .advantages__items::after {
+  .advantages__image {
     background: url(../img/advant-iphone@2x.png) no-repeat;
-    background-size: auto 320px;
+    background-size: auto 286px;
   }
 }
 .advantages__title {
@@ -783,9 +788,9 @@ template {
   width: 100%;
 }
 .advantages__desc--last {
-  margin-bottom: 0;
+  margin-bottom: 38px;
 }
-.advantages__item--science {
+.advantages__science {
   display: none;
 }
 @media (min-width:700px) {
@@ -794,6 +799,7 @@ template {
   }
   .advantages__wrapper {
     padding-top: 49px;
+    text-align: left;
   }
   .advantages__intro {
     width: 588px;
@@ -809,84 +815,118 @@ template {
     margin-bottom: 20px;
   }
   .advantages__items {
-    min-height: 510px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 100px 6%;
+    padding-bottom: 0;
+    background-image: url(../img/advant-back-tab.jpg);
+    background-position: bottom -230px;
+    background-repeat: no-repeat;
+  }
+  .advantages__image {
+    align-self: stretch;
+    order: 0;
+    width: 268px;
+    height: 481px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: url(../img/advant-iphone-tab.png);
+    background-repeat: no-repeat;
+  }
+  .advantages__container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 6%;
-    padding-top: 100px;
-    padding-bottom: 0;
-    background-image: url(../img/advant-back-tab.jpg);
-    background-position: bottom -230px;
-  }
-  .advantages__items::after {
-    width: 268px;
-    height: 548px;
-    bottom: -69px;
-    left: 25%;
-    margin-left: -130px;
-    background: url(../img/advant-iphone-tab.png);
+    width: 295px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 2%;
+    flex-grow: 1;
   }
   .advantages__item {
-    width: 50%;
-    padding-left: 50%;
+    width: auto;
+    flex-grow: 1;
     text-align: left;
   }
   .advantages__title {
     margin-bottom: 12px;
     font-size: 18px;
     line-height: 24px;
-    color: #000000;
   }
   .advantages__desc {
+    width: auto;
     font-size: 14px;
     line-height: 24px;
-    margin-bottom: 34px;
+    margin-bottom: 35px;
   }
   .advantages__desc--last {
     margin-bottom: 35px;
   }
-  .advantages__desc--science {
-    margin-bottom: 10px;
-  }
-  .advantages__item--science {
-    display: block;
+  .advantages__science {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
     position: relative;
-    width: 45%;
-    min-width: 295px;
-    min-height: 210px;
-    padding: 96px 0;
-    padding-left: 50%;
-    padding-right: 5%;
+    padding: 90px 6%;
+    padding-top: 56px;
     background: #ffffff;
     z-index: 2;
   }
-  .advantages__item--science::before {
-    content: "24";
-    position: absolute;
+  .advantages__science .advantages__science-img {
+    position: relative;
     width: 240px;
     height: 280px;
-    font-size: 96px;
-    line-height: 300px;
-    top: 50%;
-    left: 22%;
-    margin-left: -102px;
-    margin-top: -145px;
-    text-align: center;
+    margin-right: 28px;
+    background: url(../img/adv-clock.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  .advantages__science .advantages__science-img span {
+    display: block;
     color: #d22856;
     font-family: "Open Sans Bold";
-    background: url(../img/adv-clock.svg) no-repeat;
-    z-index: 3;
+    font-size: 96px;
+    line-height: 96px;
+    padding-top: 102px;
+    padding-left: 65px;
   }
-  .advantages__title--science {
-    width: auto;
+  .advantages__science .advantages__science-inform {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 295px;
+    max-width: 400px;
+    min-height: 210px;
+    flex-grow: 1;
+    padding-left: 5%;
+    padding-right: 2%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .advantages__science h2 {
     font-size: 30px;
     line-height: 36px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-family: "Open Sans Bold";
+    text-align: left;
+    color: #000000;
   }
-  .advantages__add {
+  .advantages__science p {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .advantages__science a {
+    align-self: flex-start;
     font-family: "Open Sans";
     font-size: 14px;
     line-height: 24px;
@@ -895,7 +935,7 @@ template {
   }
 }
 @media (min-width:700px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:700px) and (min-resolution: 144dpi), ~(-webkit-min-device-pixel-ratio: 1.5), ~(min-resolution: 1.5dppx) {
-  .advantages__items::after {
+  .advantages__image {
     background: url(../img/advant-iphone-tab@2x.png) no-repeat;
     background-size: auto 485px;
   }
@@ -913,6 +953,9 @@ template {
     width: 37%;
     margin-bottom: 0;
   }
+  .advantages__image {
+    display: none;
+  }
   .advantages__items {
     display: flex;
     flex-direction: row;
@@ -920,23 +963,32 @@ template {
     align-items: stretch;
     min-height: 410px;
     width: 100%;
+    box-sizing: border-box;
     padding: 0 11%;
     padding-top: 75px;
     background-image: url(../img/advant-back-desc.jpg);
     background-position: top 60px center;
   }
-  .advantages__items::after {
-    display: none;
+  .advantages__container {
+    width: auto;
+    max-width: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0;
   }
   .advantages__item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     position: relative;
     width: 300px;
+    max-width: none;
     padding-top: 301px;
     padding-left: 0%;
+    flex-grow: 0;
     text-align: center;
   }
   .advantages__item::before {
@@ -946,6 +998,8 @@ template {
     width: 294px;
     height: 382px;
     top: 0px;
+    left: 50%;
+    margin-left: -147px;
     background-image: url(../img/advant-iphone-desc1.png);
     background-repeat: no-repeat;
   }
@@ -985,52 +1039,63 @@ template {
   .advantages__desc--last {
     margin-bottom: 30px;
   }
-  .advantages__item--science {
-    width: 49.5%;
-    display: block;
+  .advantages__science {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
     margin: 0 auto;
-    padding: 98px 0;
-    padding-left: 41.5%;
-    padding-right: 9%;
-    text-align: left;
+    width: 78%;
+    padding: 98px 11%;
     background: #f2f2f2;
-    z-index: 2;
   }
-  .advantages__item--science::before {
-    content: "24";
-    position: absolute;
+  .advantages__science .advantages__science-img {
     width: 300px;
     height: 350px;
-    font-size: 120px;
-    line-height: 380px;
-    top: 50%;
-    margin-top: -202px;
-    left: 11%;
-    margin-left: -2px;
-    background: url(../img/adv-clock.svg);
-    background-repeat: no-repeat;
+    flex-grow: 0;
+    margin-right: 7%;
   }
-  .advantages__title--science {
+  .advantages__science .advantages__science-img span {
+    font-size: 120px;
+    line-height: 120px;
+    padding-top: 130px;
+    padding-left: 82px;
+  }
+  .advantages__science .advantages__science-inform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 570px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-grow: 1;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .advantages__science h2 {
     width: auto;
+    margin-bottom: 22px;
     padding-top: 0;
     font-size: 30px;
     line-height: 30px;
     text-align: left;
   }
-  .advantages__title--science br {
+  .advantages__science h2 br {
     display: none;
   }
-  .advantages__desc--science {
-    width: 100%;
-    max-width: 95%;
+  .advantages__science p {
     min-height: 90px;
+    margin-bottom: 30px;
     padding-left: 0;
-    text-align: left;
-  }
-  .advantages__add {
     font-size: 18px;
     line-height: 30px;
-    text-align: left;
+    flex-grow: 0;
+  }
+  .advantages__science a {
+    font-size: 18px;
+    line-height: 30px;
   }
 }
 @media (min-width:1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:1200px) and (min-resolution: 144dpi), ~(-webkit-min-device-pixel-ratio: 1.5), ~(min-resolution: 1.5dppx) {
@@ -1048,11 +1113,6 @@ template {
 @media (min-width:1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:1200px) and (min-resolution: 144dpi), ~(-webkit-min-device-pixel-ratio: 1.5), ~(min-resolution: 1.5dppx) {
   .advantages__item:nth-of-type(3)::before {
     background-image: url(../img/advant-iphone-desc3@2x.png);
-  }
-}
-@media (min-width:1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:1200px) and (min-resolution: 144dpi), ~(-webkit-min-device-pixel-ratio: 1.5), ~(min-resolution: 1.5dppx) {
-  .advantages__item--science::before {
-    background: url(../img/adv-clock.svg);
   }
 }
 /* REVIEW */
@@ -2017,6 +2077,7 @@ template {
   background-color: #f2f2f2;
   cursor: pointer;
   margin-top: 3px;
+  margin-left: 0.5px;
 }
 .add-photo__filter-input input[type=range]::-webkit-slider-runnable-track {
   height: 2px;
@@ -2033,6 +2094,9 @@ template {
   color: transparent;
   height: 0px;
   background-color: #283645;
+}
+.add-photo__filter-input input[type=range]::-ms-tooltip {
+  display: none;
 }
 .add-photo__buttons {
   position: relative;
@@ -2415,7 +2479,7 @@ template {
   -webkit-tap-highlight-color: transparent;
 }
 .competition-form__label:hover {
-  border: 2px solid #283645;
+  border: 2px solid #d22856;
   transition: all 0.3s ease-in;
 }
 .competition-form__label:active {
@@ -2431,7 +2495,10 @@ template {
 }
 .competition-form__item input[type="checkbox"]:checked + label:hover,
 .competition-form__item input[type="radio"]:checked + label:hover {
-  border: 2px solid #283645;
+  border: 2px solid #d22856;
+}
+.competition-form .hover {
+  border: 2px solid #d22856;
 }
 .competition-form__item input[type="checkbox"]:checked + label::before,
 .competition-form__item input[type="radio"]:checked + label::before {
@@ -2517,13 +2584,6 @@ span.competition-form__required-field__star {
   color: #283645;
   opacity: 1;
 }
-@media (hover: none) {
-  label:hover,
-  input:hover,
-  textarea:hover {
-    border-color: #e5e5e5;
-  }
-}
 @media (min-width:700px) {
   .competition-form__group {
     background-color: #ffffff;
@@ -2602,6 +2662,14 @@ span.competition-form__required-field__star {
   }
   .competition-form__text {
     padding-left: 20px;
+  }
+  .competition-form__label:hover {
+    border: 2px solid #283645;
+    transition: all 0.3s ease-in;
+  }
+  .competition-form__item input[type="checkbox"]:checked + label:hover,
+  .competition-form__item input[type="radio"]:checked + label:hover {
+    border: 2px solid #283645;
   }
   .competition-form__submit {
     width: 300px;

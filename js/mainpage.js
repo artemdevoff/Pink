@@ -1,20 +1,78 @@
 $(function () {
 
   $(".main-nav__button").click(function () {
-
     $(".main-nav__items").slideToggle("slow");
     $(".main-nav__toogle").toggleClass("main-nav__toogle--opened");
     $(".main-nav__button").toggleClass("main-nav__button--opened");
-
-
-
   });
+
+
+  if (window.matchMedia("(min-width: 700px)").matches) {
+
+
+    $(".intro__inform").addClass("wow fadeInLeft");
+
+    $(".advantages__intro").each(function () {
+
+      $(this).addClass("wow fadeIn").css({
+        animationDuration: "1s"
+      });
+      $(".advantages__intro").eq(1).css({
+        animationDelay: ".5s"
+      });
+    });
+
+
+    $(".advantages__image").addClass("wow fadeInLeft").css({
+      animationDuration: "1.5s",
+    });
+
+    $(".advantages__item").each(function () {
+
+      $(this).addClass("wow zoomInUp").css({
+        animationDuration: "1s"
+      });
+      $(".advantages__item").eq(0).css({
+        animationDelay: ".3s"
+      });
+      $(".advantages__item").eq(1).css({
+        animationDelay: ".7s"
+      });
+      $(".advantages__item").eq(2).css({
+        animationDelay: "1.2s"
+      });
+    });
+
+    $(".advantages__science-img").addClass("wow fadeInLeft").css({
+      animationDuration: "1.5s",
+    });
+    $(".advantages__science-inform").addClass("wow fadeInRight").css({
+      animationDuration: "2s",
+    });
+
+    $(".contacts__intro").each(function () {
+
+      $(this).addClass("wow fadeIn").css({
+        animationDuration: "1s"
+      });
+      $(".advantages__intro").eq(1).css({
+        animationDelay: "1s"
+      });
+    });
+
+    $(".contacts__inform").each(function () {
+
+      $(this).addClass("wow tada").css({
+        animationDelay: "1s"
+      });
+    });
+  }
 });
+
 
 $('.review__items').slick({
   mobileFirst: true,
-  autoplay: true,
-  autoplaySpeed: 3000,
+
   slidesToShow: 1,
   speed: 600,
   cssEase: "ease-in",
@@ -22,6 +80,13 @@ $('.review__items').slick({
   arrows: false,
   adaptiveHeight: true,
   responsive: [
+    {
+      breakpoint: 699,
+      settings: {
+        autoplay: true,
+        autoplaySpeed: 3000
+      }
+    },
     {
       breakpoint: 1199,
       settings: {

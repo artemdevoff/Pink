@@ -8,7 +8,7 @@
   line-height: 30px;
   color: @color-dark-blue;
   &__group {
-    background-color: @color-photo;
+    background-color: @color-grey;
     padding: 0 6%;
     padding-top: 35px;
     padding-bottom: 50px;
@@ -147,7 +147,7 @@
     -ms-user-select: none;
     -webkit-tap-highlight-color: transparent;
     &:hover {
-      border: 2px solid @color-dark-blue;
+      border: 2px solid @color-pink;
       .transition();
     }
     &:active {
@@ -162,9 +162,12 @@
   &__item input[type="radio"]:checked + label {
     border: 2px solid @color-pink;
   }
-  &__item input[type="checkbox"]:checked + label:hover,
-  &__item input[type="radio"]:checked + label:hover {
-    border: 2px solid @color-dark-blue;
+      &__item input[type="checkbox"]:checked + label:hover,
+    &__item input[type="radio"]:checked + label:hover {
+      border: 2px solid @color-pink;
+    }
+  .hover {
+    border: 2px solid #d22856;
   }
   &__item input[type="checkbox"]:checked + label::before,
   &__item input[type="radio"]:checked + label::before {
@@ -247,13 +250,7 @@
   .placeholder();
 }
 
-@media (hover: none) {
-  label:hover,
-  input:hover,
-  textarea:hover {
-    border-color: @color-price;
-  }
-}
+
 
 
 @media @tablet-width {
@@ -335,6 +332,16 @@
     }
     &__text {
       padding-left: 20px;
+    }
+    &__label {
+      &:hover {
+        border: 2px solid @color-dark-blue;
+        .transition();
+      }
+    }
+    &__item input[type="checkbox"]:checked + label:hover,
+    &__item input[type="radio"]:checked + label:hover {
+      border: 2px solid @color-dark-blue;
     }
     &__submit {
       width: 300px;

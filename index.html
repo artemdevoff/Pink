@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <title>Pink</title>
-  <link rel="stylesheet" href="css/slick-theme.min.css">
   <link rel="stylesheet" href="css/slick.min.css">
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
   <script src="js/svgsprite.js"></script>
   <script src="js/preload.js"></script>
 </head>
@@ -32,7 +32,7 @@
     </nav>
     <div class="intro">
       <div class="intro__wrapper">
-        <div class="intro__inform">
+        <div class="intro__inform" >
           <p class="intro__title">Взгляните на жизнь иначе!</p>
           <button class="intro__button">Скачать приложение</button>
           <div class="intro__download-app">
@@ -63,36 +63,47 @@
   </header>
   <section class="advantages">
     <div class="advantages__wrapper">
-      <p class="advantages__intro">Устали от серости мегаполиса?
+      <p class="advantages__intro" data-wow-offset="100">Устали от серости мегаполиса?
       </p>
-      <p class="advantages__intro">
+      <p class="advantages__intro" data-wow-offset="50">
         Нам есть, что вам предложить!
       </p>
       <div class="advantages__items">
-        <div class="advantages__item">
-          <h2 class="advantages__title">Поднимает настроение</h2>
-          <p class="advantages__desc">
-            Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!
-          </p>
-        </div>
-        <div class="advantages__item">
-          <h2 class="advantages__title">Меняет мир вокруг</h2>
-          <p class="advantages__desc">
-            Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект
-          </p>
-        </div>
-        <div class="advantages__item">
-          <h2 class="advantages__title">Заводит новых друзей</h2>
-          <p class="advantages__desc advantages__desc--last">
-            Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых </p>
+        <div class="advantages__image" data-wow-offset="100"></div>
+        <div class="advantages__container">
+
+          <div class="advantages__item">
+            <h2 class="advantages__title">Поднимает настроение</h2>
+            <p class="advantages__desc">
+              Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!
+            </p>
+          </div>
+
+          <div class="advantages__item">
+            <h2 class="advantages__title">Меняет мир вокруг</h2>
+            <p class="advantages__desc">
+              Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект
+            </p>
+          </div>
+
+          <div class="advantages__item">
+            <h2 class="advantages__title">Заводит новых друзей</h2>
+            <p class="advantages__desc advantages__desc--last">
+              Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых </p>
+          </div>
+
         </div>
       </div>
-      <div class="advantages__item advantages__item--science">
-        <h2 class="advantages__title advantages__title--science">Эффект<br> на 24 часа!</h2>
-        <p class="advantages__desc advantages__desc--science">
-          Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!
-        </p>
-        <a href="#" class="advantages__add">Узнать больше об исследовании</a>
+      <div class="advantages__science">
+        <div class="advantages__science-img" data-wow-offset="150"><span>24</span></div>
+        <div class="advantages__science-inform" data-wow-offset="150">
+          <h2>Эффект <br> на 24 часа!</h2>
+          <p>
+            Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!
+            
+          </p>
+          <a href="#">Узнать больше об исследовании</a>
+        </div>
       </div>
     </div>
   </section>
@@ -223,8 +234,8 @@
   </div>
   <div class="contacts">
     <div class="contacts__wrapper">
-      <p class="contacts__intro">Остались вопросы?</p>
-      <p class="contacts__intro">Свяжитесь с нами!</p>
+      <p class="contacts__intro wow fadeIn" data-wow-offset="50">Остались вопросы?</p>
+      <p class="contacts__intro wow fadeIn" data-wow-offset="20">Свяжитесь с нами!</p>
       <div class="contacts__container">
         <div class="contacts__inform">
           <p class="contacts__title">Звоните:</p>
@@ -272,10 +283,12 @@
   <script src="js/jquery-3.0.0.min.js"></script>
   <script src="js/jquery-migrate-1.4.1.min.js"></script>
   <script src="js/slick.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
   <script src="js/mainpage.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9ovsq4fBDJw2XyX4Ws746-TNhpQnqrio&callback=initMap">
-
-
   </script>
 
 </body>
