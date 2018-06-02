@@ -141,50 +141,37 @@
     background-color: @color-white;
     border: 2px solid @color-price;
     cursor: pointer;
-    .transition();
+    .transition(border);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-tap-highlight-color: transparent;
-    &:hover {
-      border: 2px solid @color-pink;
-      .transition();
-    }
-    &:active {
-      border: 2px solid @color-pink;
-      .transition();
-    }
   }
   &__label--app {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
   }
   &__item input[type="checkbox"]:checked + label,
   &__item input[type="radio"]:checked + label {
     border: 2px solid @color-pink;
   }
-      &__item input[type="checkbox"]:checked + label:hover,
-    &__item input[type="radio"]:checked + label:hover {
-      border: 2px solid @color-pink;
-    }
-  .hover {
-    border: 2px solid #d22856;
+  &__item input[type="checkbox"]:checked + label {
+    background-image: url(../img/tick.svg);
+    background-repeat: no-repeat;
+    background-position: center;
   }
-  &__item input[type="checkbox"]:checked + label::before,
-  &__item input[type="radio"]:checked + label::before {
+  &__item input[type="radio"]:checked + label.competition-form__label--app {
+    background-image: none;
+  }
+
+  &__item input[type="radio"]:checked + label.competition-form__label--app::before {
     content: "";
     position: absolute;
-    width: 22px;
+    width: 16px;
     height: 16px;
     left: 50%;
     top: 50%;
-    margin-left: -11px;
-    margin-top: -8px;
-    background-image: url(../img/tick.svg);
-    background-repeat: no-repeat;
-  }
-  &__item input[type="radio"]:checked + label.competition-form__label--app::before {
-    width: 16px;
-    height: 16px;
     margin-left: -8px;
     margin-top: -8px;
     background-color: @color-pink;
@@ -333,16 +320,6 @@
     &__text {
       padding-left: 20px;
     }
-    &__label {
-      &:hover {
-        border: 2px solid @color-dark-blue;
-        .transition();
-      }
-    }
-    &__item input[type="checkbox"]:checked + label:hover,
-    &__item input[type="radio"]:checked + label:hover {
-      border: 2px solid @color-dark-blue;
-    }
     &__submit {
       width: 300px;
       margin-bottom: 0;
@@ -404,6 +381,18 @@
     }
     &__item {
       margin-top: 0px;
+    }
+    &__label {
+      .transition(border);
+      &:hover {
+        border: 2px solid @color-dark-blue;
+        .transition();
+      }
+    }
+    &__item input[type="checkbox"]:checked + label:hover,
+    &__item input[type="radio"]:checked + label:hover {
+      .transition(border);
+      border: 2px solid @color-dark-blue;
     }
     &__submit {
       display: block;

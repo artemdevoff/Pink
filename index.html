@@ -284,12 +284,16 @@
   <script src="js/jquery-migrate-1.4.1.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/wow.min.js"></script>
+  
   <script>
     new WOW().init();
   </script>
   <script src="js/mainpage.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9ovsq4fBDJw2XyX4Ws746-TNhpQnqrio&callback=initMap">
-  </script>
+  <script>
+if (window.matchMedia("(min-width: 700px)").matches) {
+  document.write('<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9ovsq4fBDJw2XyX4Ws746-TNhpQnqrio&callback=initMap"><\/script>');
+}
+</script>
 
 </body>
 

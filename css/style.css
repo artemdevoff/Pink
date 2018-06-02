@@ -2472,50 +2472,36 @@ template {
   background-color: #ffffff;
   border: 2px solid #e5e5e5;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: border 0.3s ease-in;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-.competition-form__label:hover {
-  border: 2px solid #d22856;
-  transition: all 0.3s ease-in;
-}
-.competition-form__label:active {
-  border: 2px solid #d22856;
-  transition: all 0.3s ease-in;
-}
 .competition-form__label--app {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
 }
 .competition-form__item input[type="checkbox"]:checked + label,
 .competition-form__item input[type="radio"]:checked + label {
   border: 2px solid #d22856;
 }
-.competition-form__item input[type="checkbox"]:checked + label:hover,
-.competition-form__item input[type="radio"]:checked + label:hover {
-  border: 2px solid #d22856;
+.competition-form__item input[type="checkbox"]:checked + label {
+  background-image: url(../img/tick.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.competition-form .hover {
-  border: 2px solid #d22856;
+.competition-form__item input[type="radio"]:checked + label.competition-form__label--app {
+  background-image: none;
 }
-.competition-form__item input[type="checkbox"]:checked + label::before,
-.competition-form__item input[type="radio"]:checked + label::before {
+.competition-form__item input[type="radio"]:checked + label.competition-form__label--app::before {
   content: "";
   position: absolute;
-  width: 22px;
+  width: 16px;
   height: 16px;
   left: 50%;
   top: 50%;
-  margin-left: -11px;
-  margin-top: -8px;
-  background-image: url(../img/tick.svg);
-  background-repeat: no-repeat;
-}
-.competition-form__item input[type="radio"]:checked + label.competition-form__label--app::before {
-  width: 16px;
-  height: 16px;
   margin-left: -8px;
   margin-top: -8px;
   background-color: #d22856;
@@ -2663,14 +2649,6 @@ span.competition-form__required-field__star {
   .competition-form__text {
     padding-left: 20px;
   }
-  .competition-form__label:hover {
-    border: 2px solid #283645;
-    transition: all 0.3s ease-in;
-  }
-  .competition-form__item input[type="checkbox"]:checked + label:hover,
-  .competition-form__item input[type="radio"]:checked + label:hover {
-    border: 2px solid #283645;
-  }
   .competition-form__submit {
     width: 300px;
     margin-bottom: 0;
@@ -2742,6 +2720,18 @@ span.competition-form__required-field__star {
   }
   .competition-form__item {
     margin-top: 0px;
+  }
+  .competition-form__label {
+    transition: border 0.3s ease-in;
+  }
+  .competition-form__label:hover {
+    border: 2px solid #283645;
+    transition: all 0.3s ease-in;
+  }
+  .competition-form__item input[type="checkbox"]:checked + label:hover,
+  .competition-form__item input[type="radio"]:checked + label:hover {
+    transition: border 0.3s ease-in;
+    border: 2px solid #283645;
   }
   .competition-form__submit {
     display: block;
