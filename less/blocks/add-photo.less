@@ -78,7 +78,7 @@
     position: absolute;
     display: none;
     width: 240px;
-    height: 20px;
+    height: 26px;
     margin: 0 auto;
     padding: 0;
     top: 0;
@@ -101,30 +101,30 @@
     -webkit-appearance: none;
     box-sizing: content-box;
     border: 2px solid @color-pink;
-    height: 14px;
-    width: 14px;
+    height: 22px;
+    width: 22px;
     border-radius: 50%;
     background-color: @color-grey;
     cursor: pointer;
-    margin-top: -9px;
+    margin-top: -13px;
   }
 
   input[type=range]::-moz-range-thumb {
     border: 2px solid @color-pink;
-    height: 14px;
-    width: 14px;
+    height: 22px;
+    width: 22px;
     border-radius: 50%;
     background-color: @color-grey;
     cursor: pointer;
-    margin-top: -7px;
+    margin-top: -13px;
 
   }
 
   input[type=range]::-ms-thumb {
     display: inline-block;
     border: 2px solid @color-pink;
-    height: 14px;
-    width: 14px;
+    height: 22px;
+    width: 22px;
     border-radius: 50%;
     background-color: @color-grey;
     cursor: pointer;
@@ -291,6 +291,23 @@
       right: auto;
       width: 75%;
     }
+    input[type=range]::-webkit-slider-thumb {
+    height: 18px;
+    width: 18px;
+    margin-top: -11px;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    margin-top: -11px;
+
+  }
+
+  input[type=range]::-ms-thumb {
+    height: 18px;
+    width: 18px;
+  }
   }
   .add-photo__buttons {
     padding-top: 0px;
